@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qIn-Jn-C1B">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Auth View Controller-->
+        <scene sceneID="GVs-k3-hZ9">
+            <objects>
+                <viewController storyboardIdentifier="AuthViewController" title="Auth View Controller" id="qIn-Jn-C1B" customClass="AuthViewController" customModule="marvelChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bnq-cC-sLW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="center" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FbD-8q-a61">
+                                <rect key="frame" x="0.0" y="196.5" width="414" height="60"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel-logo-4" translatesAutoresizingMaskIntoConstraints="NO" id="c89-GT-1Ln">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.88235294117647056" green="0.15294117647058825" blue="0.043137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="syD-2W-RZf"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-Nt-s0g">
+                                <rect key="frame" x="16" y="323.5" width="382" height="122"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ib5-AD-mK7">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
+                                        <color key="backgroundColor" name="White"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjp-P8-qlT" userLabel="passwordInput">
+                                        <rect key="frame" x="0.0" y="46" width="382" height="34"/>
+                                        <color key="backgroundColor" name="White"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="passwordTextField:" destination="4au-Dn-aZr" eventType="editingDidEnd" id="bhB-Lb-1Fb"/>
+                                        </connections>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="vzz-Mc-sdr" userLabel="stack view">
+                                        <rect key="frame" x="0.0" y="92" width="382" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ta7-WT-i8t">
+                                                <rect key="frame" x="0.0" y="0.0" width="185" height="30"/>
+                                                <color key="backgroundColor" name="Red"/>
+                                                <state key="normal" title="Sign Up">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="signUpButtonAction:" destination="qIn-Jn-C1B" eventType="touchUpInside" id="iTX-zg-Rgr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eR2-Ce-uPB">
+                                                <rect key="frame" x="197" y="0.0" width="185" height="30"/>
+                                                <color key="backgroundColor" name="Red"/>
+                                                <state key="normal" title="Log In">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="logInButtonAction:" destination="qIn-Jn-C1B" eventType="touchUpInside" id="7NE-qf-8Fe"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="A30-gT-Zoi"/>
+                        <color key="backgroundColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="A30-gT-Zoi" firstAttribute="trailing" secondItem="pjr-Nt-s0g" secondAttribute="trailing" constant="16" id="MJ1-D5-o8B"/>
+                            <constraint firstItem="FbD-8q-a61" firstAttribute="leading" secondItem="A30-gT-Zoi" secondAttribute="leading" id="PHN-go-nwB"/>
+                            <constraint firstItem="FbD-8q-a61" firstAttribute="centerY" secondItem="A30-gT-Zoi" secondAttribute="centerY" multiplier="0.5" id="ene-Qj-Ddh"/>
+                            <constraint firstItem="pjr-Nt-s0g" firstAttribute="top" secondItem="FbD-8q-a61" secondAttribute="bottom" constant="67" id="nc7-VK-ZOE"/>
+                            <constraint firstAttribute="trailing" secondItem="FbD-8q-a61" secondAttribute="trailing" id="sUb-ub-R0C"/>
+                            <constraint firstItem="pjr-Nt-s0g" firstAttribute="leading" secondItem="A30-gT-Zoi" secondAttribute="leading" constant="16" id="upQ-G1-nf7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="I5u-42-cnP"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="ib5-AD-mK7" id="ChH-Tb-DdH"/>
+                        <outlet property="logInButton" destination="eR2-Ce-uPB" id="47L-tZ-WGX"/>
+                        <outlet property="passwordInput" destination="Fjp-P8-qlT" id="scs-at-IZt"/>
+                        <outlet property="signUpButton" destination="Ta7-WT-i8t" id="rc0-e7-bgZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7cI-S2-69i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="4au-Dn-aZr" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-723" y="80"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="marvel-logo-4" width="4096" height="1638"/>
+        <namedColor name="Red">
+            <color red="0.88200002908706665" green="0.15299999713897705" blue="0.043000001460313797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
