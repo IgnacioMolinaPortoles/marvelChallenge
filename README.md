@@ -1,11 +1,11 @@
-### Code Challenge iOS
+# Code Challenge iOS
 
-# Done
+### Done
 - Login
 - Logout
 - List of superheroes
 
-# To do
+### To do
 - Show info about the selected superhero
 - List of events
 - Show info about the selected event
