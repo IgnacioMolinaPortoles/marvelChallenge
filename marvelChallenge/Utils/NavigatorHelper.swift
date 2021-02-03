@@ -36,4 +36,17 @@ class NavigatorHelper {
             window.rootViewController = nav
         }
     }
+    
+    
+    func goToInfoViewController(originVc:UIViewController) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Home", bundle:nil)
+        
+        let destinationVC = (storyBoard.instantiateViewController(withIdentifier: "CharacterInfoViewController") as? CharacterInfoViewController)!
+      //  destinationVC.modalPresentationStyle = .overCurrentContext
+        
+//        originVc.navigationController?.pushViewController(destinationVC, animated: true)
+
+        originVc.present(destinationVC, animated: true, completion: nil)
+
+    }
 }

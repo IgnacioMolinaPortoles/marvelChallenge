@@ -164,18 +164,17 @@
 			isa = PBXGroup;
 			children = (
 				2D48976A25CA23EA00E3C7DC /* Decoder */,
-				2D48976525CA23C200E3C7DC /* Data */,
 				2D48976225CA23B600E3C7DC /* NetworkingProvider.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		2D48976525CA23C200E3C7DC /* Data */ = {
+		2D48976525CA23C200E3C7DC /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				2D48976625CA23C700E3C7DC /* Character.swift */,
 			);
-			path = Data;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		2D48976A25CA23EA00E3C7DC /* Decoder */ = {
@@ -217,6 +216,7 @@
 		2D990C1425C8A2E7001A0E16 /* marvelChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				2D48976525CA23C200E3C7DC /* Models */,
 				2D48976125CA23AD00E3C7DC /* Networking */,
 				2D48974D25CA1D1000E3C7DC /* Resources */,
 				0F13F10325C9C95700DCB146 /* Views */,

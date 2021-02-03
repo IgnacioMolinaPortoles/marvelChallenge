@@ -21,11 +21,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+       
+        usersTable.dataSource = self
+        usersTable.delegate = self
+        usersTable.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "CharacterTableCell")
+        
         fetchActivityIndicator.hidesWhenStopped = true
         fetchActivityIndicator.startAnimating()
-        
-        usersTable.dataSource = self
-        usersTable.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "CharacterTableCell")
         
         NetworkingProvider.shared.getSuperheroes(pagination:pagination) { (Character) in
                 self.character = Character
@@ -36,10 +38,20 @@ class HomeViewController: UIViewController {
         }
 
     }
+    
+    private func setupTableView() {
+        
+    }
 
 }
 
-extension HomeViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(character[indexPath.row])
+        
+        goToInfoViewController()
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return character.count
         
@@ -54,14 +66,15 @@ extension HomeViewController: UITableViewDataSource {
         
         //cell!.textLabel?.text = character[indexPath.row].name
         
-        if indexPath.row == character.count-1 { //you might decide to load sooner than -1 I guess...
+        if indexPath.row == character.count-1 { //you might decide to load sooner than -1 I guess..
+            self.pagination += 1
+
             NetworkingProvider.shared.getSuperheroes(pagination: self.pagination) { (Character) in
                 var _CharactersTemp: [Character] = self.character
                 Character.forEach{ char in
                     _CharactersTemp.append(char)
                 }
                 
-                self.pagination += 1
                 self.character = _CharactersTemp
                 self.usersTable.reloadData()
                 self.fetchActivityIndicator.stopAnimating()
@@ -71,13 +84,18 @@ extension HomeViewController: UITableViewDataSource {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterTableCell", for: indexPath)as? CharacterTableViewCell
-        if(indexPath.row == 0){
+        if indexPath.row == 0 {
             print(character[indexPath.row])
         }
         cell?.delegate = self
+        //cell.setup(characted: character[indexPath.row])
+        
+        
         cell?.nameLabel.text = character[indexPath.row].name
         cell?.descriptionLabel.text = character[indexPath.row].description
         cell?.setAvatarImage(imageUrl: String(character[indexPath.row].thumbnail!.path) + "." + String(character[indexPath.row].thumbnail!.extension))
+        
+        
         return cell!
     }
     
@@ -85,8 +103,9 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: CharacterTableViewCellDelegate {
     func goToInfoViewController() {
-        self.navigationController?.pushViewController(CharacterInfoViewController(), animated: true)
-        print("Ir a la character info view")
+        //delegate
+        NavigatorHelper.sharedInstance.goToInfoViewController(originVc: self)
+    
     }
 
 }

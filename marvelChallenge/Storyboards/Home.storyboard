@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -40,52 +40,46 @@
             </objects>
             <point key="canvasLocation" x="-86" y="187"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="O4r-gq-65b">
-            <objects>
-                <navigationController id="RAa-dz-GzM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Oll-0E-zRe"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FJU-HD-cDj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="7jz-Sd-zgQ" kind="relationship" relationship="rootViewController" id="Qz4-l8-KIb"/>
-                        <segue destination="ZcL-Zr-phU" kind="push" id="Imr-h5-sOY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UPx-fl-1qT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2186" y="-1110"/>
-        </scene>
         <!--Character Info View Controller-->
         <scene sceneID="0Ox-0K-RB5">
             <objects>
                 <viewController storyboardIdentifier="CharacterInfoViewController" id="ZcL-Zr-phU" customClass="CharacterInfoViewController" customModule="marvelChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rqd-FK-kX3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Informacion del changuito" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sII-N6-8MI">
-                                <rect key="frame" x="20" y="170" width="374" height="67"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYi-tg-xyJ">
+                                <rect key="frame" x="40" y="84" width="334" height="738"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Informacion del changuito" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sII-N6-8MI">
+                                        <rect key="frame" x="-20" y="335" width="374" height="67"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="sII-N6-8MI" firstAttribute="centerX" secondItem="qYi-tg-xyJ" secondAttribute="centerX" id="K40-Le-31A"/>
+                                    <constraint firstItem="sII-N6-8MI" firstAttribute="centerY" secondItem="qYi-tg-xyJ" secondAttribute="centerY" id="XAw-pk-oGu"/>
+                                    <constraint firstItem="sII-N6-8MI" firstAttribute="leading" secondItem="qYi-tg-xyJ" secondAttribute="leading" constant="20" id="dic-81-3BO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TRn-do-bfL"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TRn-do-bfL" firstAttribute="trailing" secondItem="sII-N6-8MI" secondAttribute="trailing" constant="20" id="5lN-iL-dXd"/>
-                            <constraint firstItem="sII-N6-8MI" firstAttribute="centerY" secondItem="TRn-do-bfL" secondAttribute="centerY" multiplier="0.5" id="dIx-au-jV4"/>
-                            <constraint firstItem="sII-N6-8MI" firstAttribute="leading" secondItem="TRn-do-bfL" secondAttribute="leading" constant="20" id="sz6-1N-75D"/>
+                            <constraint firstItem="qYi-tg-xyJ" firstAttribute="leading" secondItem="TRn-do-bfL" secondAttribute="leading" constant="40" id="HDx-vd-gIg"/>
+                            <constraint firstItem="TRn-do-bfL" firstAttribute="trailing" secondItem="qYi-tg-xyJ" secondAttribute="trailing" constant="40" id="OmE-Jw-RJs"/>
+                            <constraint firstItem="qYi-tg-xyJ" firstAttribute="top" secondItem="TRn-do-bfL" secondAttribute="top" constant="40" id="PQb-MI-OVk"/>
+                            <constraint firstItem="qYi-tg-xyJ" firstAttribute="centerY" secondItem="TRn-do-bfL" secondAttribute="centerY" id="SHt-IN-VW6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZeM-9I-v7T"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ek-35-n0c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-519" y="-1110"/>
+            <point key="canvasLocation" x="-484" y="-1228"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="6kw-81-0a2">
@@ -96,10 +90,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1x5-R3-v54">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" rowHeight="171" id="KXq-fD-Mwt" customClass="TableViewCell" customModule="marvelChallenge" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" rowHeight="171" id="KXq-fD-Mwt" customClass="TableViewCell" customModule="marvelChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="171"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KXq-fD-Mwt" id="Jov-ww-Wrc">
@@ -228,9 +222,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="RAa-dz-GzM" kind="relationship" relationship="viewControllers" id="GNX-hM-OhM"/>
                         <segue destination="MZy-jZ-iOj" kind="relationship" relationship="viewControllers" id="WgU-Es-0mv"/>
                         <segue destination="Fwg-NO-lB1" kind="relationship" relationship="viewControllers" id="HaR-3t-g3V"/>
+                        <segue destination="7jz-Sd-zgQ" kind="relationship" relationship="viewControllers" id="5Kn-Gp-358"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDH-7A-DY5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
