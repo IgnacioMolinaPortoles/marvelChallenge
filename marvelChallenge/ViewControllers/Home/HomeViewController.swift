@@ -20,7 +20,6 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title="Inicio"
         // Do any additional setup after loading the view.
         fetchActivityIndicator.hidesWhenStopped = true
         fetchActivityIndicator.startAnimating()
@@ -45,6 +44,7 @@ extension HomeViewController: UITableViewDataSource {
         return character.count
         
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        var cell = tableView.dequeueReusableCell(withIdentifier: "myCell")
 //
@@ -74,18 +74,21 @@ extension HomeViewController: UITableViewDataSource {
         if(indexPath.row == 0){
             print(character[indexPath.row])
         }
+        cell?.delegate = self
         cell?.nameLabel.text = character[indexPath.row].name
         cell?.descriptionLabel.text = character[indexPath.row].description
         cell?.setAvatarImage(imageUrl: String(character[indexPath.row].thumbnail!.path) + "." + String(character[indexPath.row].thumbnail!.extension))
         return cell!
     }
+    
 }
 
 extension HomeViewController: CharacterTableViewCellDelegate {
     func goToInfoViewController() {
+        self.navigationController?.pushViewController(CharacterInfoViewController(), animated: true)
         print("Ir a la character info view")
     }
-    
+
 }
 
 //extension HomeViewController: TableViewCellDelegate {

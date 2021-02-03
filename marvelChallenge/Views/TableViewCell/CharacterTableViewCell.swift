@@ -18,7 +18,7 @@ class CharacterTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
-    var delegate:CharacterTableViewCellDelegate?
+    var delegate:CharacterTableViewCellDelegate? = nil
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,7 +33,7 @@ class CharacterTableViewCell: UITableViewCell {
     }
     
     @IBAction func viewMoreButtonAction(_ sender: Any) {
-        
+        print("button")
         delegate?.goToInfoViewController()
     }
     

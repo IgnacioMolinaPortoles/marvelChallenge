@@ -24,8 +24,8 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Bienvenido a MarvelChallenge!"
-        //emailTextField.text = "ludmila@gmail.com"
-        //passwordInput.text = "123456"
+        emailTextField.text = "ludmila@gmail.com"
+        passwordInput.text = "123456"
         // Do any additional setup after loading the view.
     }
 
