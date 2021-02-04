@@ -38,13 +38,14 @@ class NavigatorHelper {
     }
     
     
-    func goToInfoViewController(originVc:UIViewController) {
+    func goToInfoViewController(originVc:UIViewController, characterInfo: Character) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Home", bundle:nil)
         
         let destinationVC = (storyBoard.instantiateViewController(withIdentifier: "CharacterInfoViewController") as? CharacterInfoViewController)!
-      //  destinationVC.modalPresentationStyle = .overCurrentContext
+        destinationVC.modalPresentationStyle = .overCurrentContext
         
-//        originVc.navigationController?.pushViewController(destinationVC, animated: true)
+        destinationVC.Character = characterInfo
+        //originVc.navigationController?.pushViewController(destinationVC, animated: true)
 
         originVc.present(destinationVC, animated: true, completion: nil)
 

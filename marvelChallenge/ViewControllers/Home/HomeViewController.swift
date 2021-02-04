@@ -22,25 +22,42 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
        
-        usersTable.dataSource = self
-        usersTable.delegate = self
-        usersTable.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "CharacterTableCell")
+        setupTable()
         
+        usersTable.isHidden = true
         fetchActivityIndicator.hidesWhenStopped = true
         fetchActivityIndicator.startAnimating()
         
-        NetworkingProvider.shared.getSuperheroes(pagination:pagination) { (Character) in
-                self.character = Character
-                self.usersTable.reloadData()
-                self.fetchActivityIndicator.stopAnimating()
-        } failure: { (error) in
-            self.fetchActivityIndicator.stopAnimating()
-        }
+        getCharacters(pag:pagination)
 
     }
     
-    private func setupTableView() {
-        
+    private func setupTable(){
+        usersTable.dataSource = self
+        usersTable.delegate = self
+        usersTable.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "CharacterTableCell")
+    }
+    
+    func getCharacters(pag:Int){
+        NetworkingProvider.shared.getSuperheroes(pagination: pag) { (Character) in
+            var _CharactersTemp: [Character] = self.character
+            if(pag != 1){
+                _CharactersTemp = self.character
+                Character.forEach{ char in
+                    _CharactersTemp.append(char)
+                }
+            } else {
+                _CharactersTemp = Character
+            }
+            
+            
+            self.character = _CharactersTemp
+            self.usersTable.isHidden = false
+            self.usersTable.reloadData()
+            self.fetchActivityIndicator.stopAnimating()
+        } failure: { (error) in
+            self.fetchActivityIndicator.stopAnimating()
+        }
     }
 
 }
@@ -48,8 +65,8 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(character[indexPath.row])
-        
-        goToInfoViewController()
+        NavigatorHelper.sharedInstance.goToInfoViewController(originVc: self, characterInfo: character[indexPath.row])
+        //goToInfoViewController()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,21 +83,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         //cell!.textLabel?.text = character[indexPath.row].name
         
-        if indexPath.row == character.count-1 { //you might decide to load sooner than -1 I guess..
+        if indexPath.row == character.count-5 { //you might decide to load sooner than -1 I guess..
             self.pagination += 1
 
-            NetworkingProvider.shared.getSuperheroes(pagination: self.pagination) { (Character) in
-                var _CharactersTemp: [Character] = self.character
-                Character.forEach{ char in
-                    _CharactersTemp.append(char)
-                }
-                
-                self.character = _CharactersTemp
-                self.usersTable.reloadData()
-                self.fetchActivityIndicator.stopAnimating()
-            } failure: { (error) in
-                self.fetchActivityIndicator.stopAnimating()
-            }
+            getCharacters(pag:self.pagination+1)
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterTableCell", for: indexPath)as? CharacterTableViewCell
@@ -88,13 +94,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             print(character[indexPath.row])
         }
         cell?.delegate = self
-        //cell.setup(characted: character[indexPath.row])
         
-        
-        cell?.nameLabel.text = character[indexPath.row].name
-        cell?.descriptionLabel.text = character[indexPath.row].description
-        cell?.setAvatarImage(imageUrl: String(character[indexPath.row].thumbnail!.path) + "." + String(character[indexPath.row].thumbnail!.extension))
-        
+        cell?.setup(character: character[indexPath.row])
         
         return cell!
     }
@@ -104,7 +105,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 extension HomeViewController: CharacterTableViewCellDelegate {
     func goToInfoViewController() {
         //delegate
-        NavigatorHelper.sharedInstance.goToInfoViewController(originVc: self)
+        //NavigatorHelper.sharedInstance.goToInfoViewController(originVc: self)
     
     }
 

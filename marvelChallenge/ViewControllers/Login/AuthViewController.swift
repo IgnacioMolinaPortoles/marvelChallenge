@@ -16,19 +16,22 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     
     override func viewDidLoad() {
-        emailTextField.layer.cornerRadius = 12
-        passwordInput.layer.cornerRadius = 12
-        logInButton.layer.cornerRadius = 12
-        signUpButton.layer.cornerRadius = 12
-        
         super.viewDidLoad()
         
-        title = "Bienvenido a MarvelChallenge!"
+        setupCornerRadius()
+        
         emailTextField.text = "ludmila@gmail.com"
         passwordInput.text = "123456"
         // Do any additional setup after loading the view.
     }
 
+    func setupCornerRadius() {
+        emailTextField.layer.cornerRadius = 7
+        passwordInput.layer.cornerRadius = 7
+        logInButton.layer.cornerRadius = 7
+        signUpButton.layer.cornerRadius = 7
+    }
+    
     @IBAction func signUpButtonAction(_ sender: Any) {
         if let email = emailTextField.text , let password = passwordInput.text{
             

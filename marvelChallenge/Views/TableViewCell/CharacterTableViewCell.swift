@@ -20,6 +20,12 @@ class CharacterTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImage: UIImageView!
     var delegate:CharacterTableViewCellDelegate? = nil
 
+    func setup(character: Character) {
+        nameLabel.text = character.name
+        descriptionLabel.text = character.description
+        setAvatarImage(imageUrl: String(character.thumbnail!.path) + "." + String(character.thumbnail!.extension))
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -38,7 +44,7 @@ class CharacterTableViewCell: UITableViewCell {
         delegate?.goToInfoViewController()
     }
     
-    func setAvatarImage(imageUrl: String){
+    private func setAvatarImage(imageUrl: String){
         avatarImage.kf.setImage(with: URL(string: imageUrl.replacingOccurrences(of: "http", with: "https")))
 
     }
