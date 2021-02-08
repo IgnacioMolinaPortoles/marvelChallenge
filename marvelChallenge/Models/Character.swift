@@ -20,10 +20,10 @@ struct Data: Decodable {
     let limit: Int?
     let total: Int?
     let count: Int?
-    let results: [Character]?
+    let results: [_Character]?
 }
 
-struct Character: Decodable {
+struct _Character: Decodable {
     
     let id: Int?
     let name: String?

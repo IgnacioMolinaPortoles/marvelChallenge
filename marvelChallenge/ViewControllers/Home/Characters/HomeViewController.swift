@@ -9,21 +9,25 @@ import UIKit
 import FirebaseAuth
 
 class HomeViewController: UIViewController {
-    
-    var email = ""
 
-    var character: [Character] = []
+    var character: [_Character] = []
     var pagination = 1
     
     @IBOutlet weak var fetchActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var usersTable: UITableView!
 
+    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       
+
         setupTable()
-        
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.orange]
+
+        self.title = "Personajes"
+
         usersTable.isHidden = true
         fetchActivityIndicator.hidesWhenStopped = true
         fetchActivityIndicator.startAnimating()
@@ -40,7 +44,7 @@ class HomeViewController: UIViewController {
     
     func getCharacters(pag:Int){
         NetworkingProvider.shared.getSuperheroes(pagination: pag) { (Character) in
-            var _CharactersTemp: [Character] = self.character
+            var _CharactersTemp: [_Character] = self.character
             if(pag != 1){
                 _CharactersTemp = self.character
                 Character.forEach{ char in
@@ -66,7 +70,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(character[indexPath.row])
         NavigatorHelper.sharedInstance.goToInfoViewController(originVc: self, characterInfo: character[indexPath.row])
-        //goToInfoViewController()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,16 +86,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         //cell!.textLabel?.text = character[indexPath.row].name
         
-        if indexPath.row == character.count-5 { //you might decide to load sooner than -1 I guess..
+        if indexPath.row == character.count-5 {
+            
             self.pagination += 1
 
             getCharacters(pag:self.pagination+1)
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterTableCell", for: indexPath)as? CharacterTableViewCell
-        if indexPath.row == 0 {
-            print(character[indexPath.row])
-        }
+
         cell?.delegate = self
         
         cell?.setup(character: character[indexPath.row])

@@ -25,6 +25,19 @@
 		2D847A5925C91A8800FF0720 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D847A5825C91A8800FF0720 /* HomeViewController.swift */; };
 		2D847A6325C9944000FF0720 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D847A6225C9944000FF0720 /* Home.storyboard */; };
 		2D847A7325C9969F00FF0720 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D847A7225C9969F00FF0720 /* GoogleService-Info.plist */; };
+		2D8545C125CDDB3D0043F0AB /* TableHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8545BF25CDDB3D0043F0AB /* TableHeaderViewController.swift */; };
+		2D8545C225CDDB3D0043F0AB /* TableHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D8545C025CDDB3D0043F0AB /* TableHeaderViewController.xib */; };
+		2D8545C825CDFEB00043F0AB /* CustomSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8545C625CDFEB00043F0AB /* CustomSectionHeader.swift */; };
+		2D8545C925CDFEB00043F0AB /* CustomSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D8545C725CDFEB00043F0AB /* CustomSectionHeader.xib */; };
+		2D8545CC25CE267D0043F0AB /* TestHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8545CB25CE267D0043F0AB /* TestHeader.swift */; };
+		2D8545DC25CEFF150043F0AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D8545DB25CEFF140043F0AB /* Images.xcassets */; };
+		2D8545E725CF0E480043F0AB /* ComicViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8545E525CF0E480043F0AB /* ComicViewCell.swift */; };
+		2D8545E825CF0E480043F0AB /* ComicViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D8545E625CF0E480043F0AB /* ComicViewCell.xib */; };
+		2D8545EB25CF1B6D0043F0AB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8545EA25CF1B6D0043F0AB /* Event.swift */; };
+		2D8545EE25D051060043F0AB /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8545ED25D051060043F0AB /* EventsViewController.swift */; };
+		2D8545F325D05CF30043F0AB /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8545F125D05CF30043F0AB /* EventViewCell.swift */; };
+		2D8545F425D05CF30043F0AB /* EventViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D8545F225D05CF30043F0AB /* EventViewCell.xib */; };
+		2D8545F825D0B91A0043F0AB /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8545F725D0B91A0043F0AB /* EventDetailViewController.swift */; };
 		2D990C1625C8A2E7001A0E16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D990C1525C8A2E7001A0E16 /* AppDelegate.swift */; };
 		2D990C1825C8A2E7001A0E16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D990C1725C8A2E7001A0E16 /* SceneDelegate.swift */; };
 		2D990C1A25C8A2E7001A0E16 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D990C1925C8A2E7001A0E16 /* AuthViewController.swift */; };
@@ -54,6 +67,19 @@
 		2D847A5825C91A8800FF0720 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2D847A6225C9944000FF0720 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		2D847A7225C9969F00FF0720 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2D8545BF25CDDB3D0043F0AB /* TableHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderViewController.swift; sourceTree = "<group>"; };
+		2D8545C025CDDB3D0043F0AB /* TableHeaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableHeaderViewController.xib; sourceTree = "<group>"; };
+		2D8545C625CDFEB00043F0AB /* CustomSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSectionHeader.swift; sourceTree = "<group>"; };
+		2D8545C725CDFEB00043F0AB /* CustomSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSectionHeader.xib; sourceTree = "<group>"; };
+		2D8545CB25CE267D0043F0AB /* TestHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHeader.swift; sourceTree = "<group>"; };
+		2D8545DB25CEFF140043F0AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2D8545E525CF0E480043F0AB /* ComicViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicViewCell.swift; sourceTree = "<group>"; };
+		2D8545E625CF0E480043F0AB /* ComicViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComicViewCell.xib; sourceTree = "<group>"; };
+		2D8545EA25CF1B6D0043F0AB /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		2D8545ED25D051060043F0AB /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		2D8545F125D05CF30043F0AB /* EventViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewCell.swift; sourceTree = "<group>"; };
+		2D8545F225D05CF30043F0AB /* EventViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventViewCell.xib; sourceTree = "<group>"; };
+		2D8545F725D0B91A0043F0AB /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		2D990C1225C8A2E7001A0E16 /* marvelChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvelChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D990C1525C8A2E7001A0E16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D990C1725C8A2E7001A0E16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,8 +107,11 @@
 		0F13F10325C9C95700DCB146 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D8545F025D05B2A0043F0AB /* EventViewCell */,
+				2D8545E025CF0E060043F0AB /* ComicViewCell */,
+				2D8545DE25CF0DCE0043F0AB /* Tests */,
+				2D8545C525CDFE8E0043F0AB /* TableHeader */,
 				0F13F10E25C9CB8300DCB146 /* TableViewCell */,
-				0F13F10425C9C95D00DCB146 /* HeaderView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,9 +147,9 @@
 		0F331F8425C9A53C00C9CB83 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2D847A5825C91A8800FF0720 /* HomeViewController.swift */,
+				2D8545FB25D0BA060043F0AB /* Characters */,
+				2D8545FA25D0B9F40043F0AB /* Events */,
 				2D48974A25CA171800E3C7DC /* ProfileViewController.swift */,
-				2DF14B8525CA68A7001E4B39 /* CharacterInfoViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -156,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				2D48974E25CA1D2700E3C7DC /* Colors.xcassets */,
+				2D8545DB25CEFF140043F0AB /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -173,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				2D48976625CA23C700E3C7DC /* Character.swift */,
+				2D8545EA25CF1B6D0043F0AB /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,6 +224,70 @@
 				0F13F10025C9C89800DCB146 /* TabBarViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2D8545BE25CDDB070043F0AB /* TableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				2D8545BF25CDDB3D0043F0AB /* TableHeaderViewController.swift */,
+				2D8545C025CDDB3D0043F0AB /* TableHeaderViewController.xib */,
+				2D8545CB25CE267D0043F0AB /* TestHeader.swift */,
+			);
+			path = TableHeaderView;
+			sourceTree = "<group>";
+		};
+		2D8545C525CDFE8E0043F0AB /* TableHeader */ = {
+			isa = PBXGroup;
+			children = (
+				2D8545C625CDFEB00043F0AB /* CustomSectionHeader.swift */,
+				2D8545C725CDFEB00043F0AB /* CustomSectionHeader.xib */,
+			);
+			path = TableHeader;
+			sourceTree = "<group>";
+		};
+		2D8545DE25CF0DCE0043F0AB /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2D8545BE25CDDB070043F0AB /* TableHeaderView */,
+				0F13F10425C9C95D00DCB146 /* HeaderView */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		2D8545E025CF0E060043F0AB /* ComicViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2D8545E525CF0E480043F0AB /* ComicViewCell.swift */,
+				2D8545E625CF0E480043F0AB /* ComicViewCell.xib */,
+			);
+			path = ComicViewCell;
+			sourceTree = "<group>";
+		};
+		2D8545F025D05B2A0043F0AB /* EventViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2D8545F125D05CF30043F0AB /* EventViewCell.swift */,
+				2D8545F225D05CF30043F0AB /* EventViewCell.xib */,
+			);
+			path = EventViewCell;
+			sourceTree = "<group>";
+		};
+		2D8545FA25D0B9F40043F0AB /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				2D8545F725D0B91A0043F0AB /* EventDetailViewController.swift */,
+				2D8545ED25D051060043F0AB /* EventsViewController.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		2D8545FB25D0BA060043F0AB /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				2DF14B8525CA68A7001E4B39 /* CharacterInfoViewController.swift */,
+				2D847A5825C91A8800FF0720 /* HomeViewController.swift */,
+			);
+			path = Characters;
 			sourceTree = "<group>";
 		};
 		2D990C0925C8A2E7001A0E16 = {
@@ -305,13 +400,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D847A5225C911B000FF0720 /* Login.storyboard in Resources */,
+				2D8545F425D05CF30043F0AB /* EventViewCell.xib in Resources */,
 				2D847A6325C9944000FF0720 /* Home.storyboard in Resources */,
+				2D8545C225CDDB3D0043F0AB /* TableHeaderViewController.xib in Resources */,
 				2D847A7325C9969F00FF0720 /* GoogleService-Info.plist in Resources */,
+				2D8545DC25CEFF150043F0AB /* Images.xcassets in Resources */,
 				2D4897B425CA534300E3C7DC /* CharacterTableViewCell.xib in Resources */,
 				0F13F10925C9C97F00DCB146 /* HeaderView.xib in Resources */,
 				2D990C2225C8A2E9001A0E16 /* LaunchScreen.storyboard in Resources */,
+				2D8545E825CF0E480043F0AB /* ComicViewCell.xib in Resources */,
 				2D990C1F25C8A2E9001A0E16 /* Assets.xcassets in Resources */,
 				2D48974F25CA1D2700E3C7DC /* Colors.xcassets in Resources */,
+				2D8545C925CDFEB00043F0AB /* CustomSectionHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,17 +468,25 @@
 				2D48976725CA23C700E3C7DC /* Character.swift in Sources */,
 				2D4897B725CA555C00E3C7DC /* CharacterTableViewCell.swift in Sources */,
 				2D48974425CA155400E3C7DC /* UserDefaultsHelper.swift in Sources */,
+				2D8545E725CF0E480043F0AB /* ComicViewCell.swift in Sources */,
 				0F13F11025C9CB9B00DCB146 /* TableViewCell.swift in Sources */,
+				2D8545F825D0B91A0043F0AB /* EventDetailViewController.swift in Sources */,
 				2D48976325CA23B600E3C7DC /* NetworkingProvider.swift in Sources */,
 				2D990C1A25C8A2E7001A0E16 /* AuthViewController.swift in Sources */,
 				0F331F8925C9A84700C9CB83 /* NavigatorHelper.swift in Sources */,
+				2D8545F325D05CF30043F0AB /* EventViewCell.swift in Sources */,
 				2D990C1625C8A2E7001A0E16 /* AppDelegate.swift in Sources */,
 				2D990C1825C8A2E7001A0E16 /* SceneDelegate.swift in Sources */,
+				2D8545EE25D051060043F0AB /* EventsViewController.swift in Sources */,
 				2D48974B25CA171800E3C7DC /* ProfileViewController.swift in Sources */,
+				2D8545C125CDDB3D0043F0AB /* TableHeaderViewController.swift in Sources */,
 				0F13F10125C9C89800DCB146 /* TabBarViewController.swift in Sources */,
 				2DF14B8625CA68A7001E4B39 /* CharacterInfoViewController.swift in Sources */,
 				2D847A5925C91A8800FF0720 /* HomeViewController.swift in Sources */,
+				2D8545C825CDFEB00043F0AB /* CustomSectionHeader.swift in Sources */,
+				2D8545CC25CE267D0043F0AB /* TestHeader.swift in Sources */,
 				0F13F10C25C9CA3C00DCB146 /* XibView.swift in Sources */,
+				2D8545EB25CF1B6D0043F0AB /* Event.swift in Sources */,
 				0F13F10625C9C96A00DCB146 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

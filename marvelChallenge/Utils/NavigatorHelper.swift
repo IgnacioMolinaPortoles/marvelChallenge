@@ -18,7 +18,6 @@ class NavigatorHelper {
             
             let destinationVC = (storyBoard.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController)!
            // destinationVC.email = email
-            
             let nav = UINavigationController(rootViewController: destinationVC)
             window.rootViewController = nav
         }
@@ -38,16 +37,29 @@ class NavigatorHelper {
     }
     
     
-    func goToInfoViewController(originVc:UIViewController, characterInfo: Character) {
+    func goToInfoViewController(originVc:UIViewController, characterInfo: _Character) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Home", bundle:nil)
         
         let destinationVC = (storyBoard.instantiateViewController(withIdentifier: "CharacterInfoViewController") as? CharacterInfoViewController)!
-        destinationVC.modalPresentationStyle = .overCurrentContext
+        //destinationVC.modalPresentationStyle = .overCurrentContext
         
         destinationVC.Character = characterInfo
-        //originVc.navigationController?.pushViewController(destinationVC, animated: true)
+        originVc.navigationController?.pushViewController(destinationVC, animated: true)
+
+        //originVc.present(destinationVC, animated: true, completion: nil)
+
+    }
+    
+    func openEventDetailModal(originVc:UIViewController, event: Event) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Home", bundle:nil)
+        
+        let destinationVC = (storyBoard.instantiateViewController(withIdentifier: "EventDetailViewController") as? EventDetailViewController)!
+        destinationVC.modalPresentationStyle = .overCurrentContext
+        
+        destinationVC.setup(event)
 
         originVc.present(destinationVC, animated: true, completion: nil)
 
     }
+    
 }

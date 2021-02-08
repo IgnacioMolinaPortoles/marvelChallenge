@@ -22,10 +22,24 @@ class AuthViewController: UIViewController {
         
         emailTextField.text = "ludmila@gmail.com"
         passwordInput.text = "123456"
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+    // Es correcto checkear esto aca?
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkCredentialsToLogin()
+    }
 
-    func setupCornerRadius() {
+    func checkCredentialsToLogin(){
+        if let email = UserDefaultsHelper.Shared.getValue(key: UserDefaultsKeys.email) {
+            NavigatorHelper.sharedInstance.goHome()
+        }
+    }
+    
+    private func setupCornerRadius() {
         emailTextField.layer.cornerRadius = 7
         passwordInput.layer.cornerRadius = 7
         logInButton.layer.cornerRadius = 7

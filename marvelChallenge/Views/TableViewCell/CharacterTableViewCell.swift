@@ -18,9 +18,12 @@ class CharacterTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var containerView: UIView!
+
     var delegate:CharacterTableViewCellDelegate? = nil
 
-    func setup(character: Character) {
+    func setup(character: _Character) {
+
         nameLabel.text = character.name
         descriptionLabel.text = character.description
         setAvatarImage(imageUrl: String(character.thumbnail!.path) + "." + String(character.thumbnail!.extension))
@@ -28,21 +31,21 @@ class CharacterTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setupStyles()
         // Initialization code
     }
     
-    
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//                // Configure the view for the selected state
-//    }
-    
-    @IBAction func viewMoreButtonAction(_ sender: Any) {
-        print("button")
-        delegate?.goToInfoViewController()
+    func setupStyles(){
+        avatarImage.layer.cornerRadius = 5
+        avatarImage.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        
+        containerView.layer.cornerRadius = 5
+        //        containerView.layer.shadowColor = UIColor.gray.cgColor
+        //        containerView.layer.shadowOpacity = 1
+        //        containerView.layer.shadowOffset = .zero
+        //        containerView.layer.shadowRadius = 1
     }
+    
     
     private func setAvatarImage(imageUrl: String){
         avatarImage.kf.setImage(with: URL(string: imageUrl.replacingOccurrences(of: "http", with: "https")))

@@ -15,8 +15,8 @@ class ProfileViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        logOutButton.layer.cornerRadius = 12
-        emailLabel.layer.cornerRadius = 12
+        logOutButton.layer.cornerRadius = 5
+        emailLabel.layer.cornerRadius = 5
         super.viewDidLoad()
         
         logOutButton.setTitle("Logout", for: .normal)
