@@ -10,20 +10,23 @@ import Kingfisher
 
 class EventDetailViewController: UIViewController {
 
-    
-    @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var comicsTable: UITableView!
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var titleLabel: UILabel?
     var comics: [Next] = []
+    var event: Event? = nil
     
+    @IBOutlet weak var eventDescriptionLabel: UILabel!
+    @IBOutlet weak var eventImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTapGesture()
         setupContainerStyles()
         setupTable()
+        eventDescriptionLabel.text = event?.resultDescription
         
+        setEventImage(imageUrl: String((event?.thumbnail!.path)!) + "." + String((event?.thumbnail!.extension)!))
+
         // Do any additional setup after loading the view.
     }
     
@@ -51,9 +54,7 @@ class EventDetailViewController: UIViewController {
     }
     
     func setup (_ event: Event) {
-        print(event.title!)
-        //titleLabel.text = event.title
-        //setEventImage(imageUrl: String(event.thumbnail!.path) + "." + String(event.thumbnail!.extension))
+        self.event = event
         
         comics = (event.comics?.items)!
     }

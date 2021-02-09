@@ -25,6 +25,8 @@ class EventsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    
     func setupTable() {
         eventTableView.isHidden = true
         eventTableView.dataSource = self
@@ -33,6 +35,7 @@ class EventsViewController: UIViewController {
         
         
     }
+    
     
     func _getEvents(pagination: Int) {
         print("get events")

@@ -15,18 +15,19 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var fetchActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var usersTable: UITableView!
-
-    @IBOutlet weak var avatarImage: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
+        UIApplication.shared.statusBarStyle = .lightContent
+        self.setNeedsStatusBarAppearanceUpdate()
+        
         setupTable()
         navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.orange]
-
-        self.title = "Personajes"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.visibleViewController?.title = "Marvel Challenge"
+            
 
         usersTable.isHidden = true
         fetchActivityIndicator.hidesWhenStopped = true
